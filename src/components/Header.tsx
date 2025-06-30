@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Menu, X, FileText, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -71,17 +70,23 @@ const Header = () => {
             <Button
               variant="outline"
               size="sm"
-              className="flex items-center space-x-2"
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white flex items-center space-x-2"
+              asChild
             >
-              <FileText className="h-4 w-4" />
-              <span>Download CV</span>
+              <a href="/lovable-uploads/resume.pdf" download>
+                <FileText className="h-4 w-4" />
+                <span>Download CV</span>
+              </a>
             </Button>
             <Button
               size="sm"
               className="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700"
+              asChild
             >
-              <Linkedin className="h-4 w-4" />
-              <span>LinkedIn</span>
+              <a href="https://www.linkedin.com/in/santhosh-chakkarapani-a616071b3/" target="_blank" rel="noopener noreferrer">
+                <Linkedin className="h-4 w-4" />
+                <span>LinkedIn</span>
+              </a>
             </Button>
           </div>
 
@@ -141,9 +146,11 @@ const Header = () => {
                   <FileText className="h-4 w-4 mr-2" />
                   CV
                 </Button>
-                <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700">
-                  <Linkedin className="h-4 w-4 mr-2" />
-                  LinkedIn
+                <Button size="sm" className="flex-1 bg-blue-600 hover:bg-blue-700" asChild>
+                  <a href="https://www.linkedin.com/in/santhosh-chakkarapani-a616071b3/" target="_blank" rel="noopener noreferrer">
+                    <Linkedin className="h-4 w-4 mr-2" />
+                    LinkedIn
+                  </a>
                 </Button>
               </div>
             </div>

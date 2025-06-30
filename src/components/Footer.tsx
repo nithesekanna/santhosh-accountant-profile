@@ -1,4 +1,3 @@
-
 import { Separator } from '@/components/ui/separator';
 import { FileText, Linkedin, Mail, Phone } from 'lucide-react';
 
@@ -20,7 +19,7 @@ const Footer = () => {
           <div className="md:col-span-2">
             <div className="mb-4">
               <h3 className="text-2xl font-bold mb-2">Santhosh Chakkarapani</h3>
-              <p className="text-gray-300 mb-4">CA Finalist & Chartered Accountant</p>
+              <p className="text-gray-300 mb-4">CA Finalist & B.Com Graduate</p>
               <p className="text-gray-400 leading-relaxed max-w-md">
                 Delivering excellence in auditing, taxation, and financial advisory services 
                 with integrity, precision, and unwavering commitment to client success.
@@ -31,7 +30,7 @@ const Footer = () => {
             <div className="space-y-2">
               <div className="flex items-center space-x-3 text-gray-300">
                 <Mail className="h-4 w-4" />
-                <span>santhosh.ca@example.com</span>
+                <span>santhoshchakarapani@gmail.com</span>
               </div>
               <div className="flex items-center space-x-3 text-gray-300">
                 <Phone className="h-4 w-4" />
@@ -110,14 +109,17 @@ const Footer = () => {
           
           <div className="flex items-center space-x-4">
             <a
-              href="#"
+              href="/lovable-uploads/resume.pdf"
+              download
               className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
             >
               <FileText className="h-4 w-4" />
               <span className="text-sm">Download CV</span>
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/santhosh-chakkarapani-a616071b3/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 text-gray-300 hover:text-white transition-colors"
             >
               <Linkedin className="h-4 w-4" />

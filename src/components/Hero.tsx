@@ -1,4 +1,3 @@
-
 import { Button } from '@/components/ui/button';
 import { FileText, Linkedin, Calendar } from 'lucide-react';
 
@@ -14,7 +13,7 @@ const Hero = () => {
                 Santhosh Chakkarapani
               </h1>
               <div className="text-xl md:text-2xl text-blue-100 mb-4">
-                CA Finalist & Chartered Accountant
+                CA Finalist & B.Com Graduate
               </div>
               <p className="text-lg text-blue-50 mb-8 max-w-2xl">
                 Specializing in auditing, taxation, compliance & financial advisory.
@@ -32,12 +31,14 @@ const Hero = () => {
                 <span>Schedule Consultation</span>
               </Button>
               <Button
-                variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-white hover:text-blue-600 flex items-center space-x-2"
+                className="bg-blue-600 hover:bg-blue-700 text-white flex items-center space-x-2"
+                asChild
               >
-                <FileText className="h-5 w-5" />
-                <span>Download CV</span>
+                <a href="/lovable-uploads/resume.pdf" download>
+                  <FileText className="h-5 w-5" />
+                  <span>Download CV</span>
+                </a>
               </Button>
             </div>
 
@@ -59,25 +60,17 @@ const Hero = () => {
           </div>
 
           {/* Professional Photo Placeholder */}
-          <div className="animate-slide-in-right">
-            <div className="relative">
-              <div className="w-80 h-96 mx-auto bg-gradient-to-br from-blue-400 to-blue-600 rounded-2xl shadow-2xl flex items-center justify-center">
-                <div className="text-center text-white">
-                  <div className="w-32 h-32 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span className="text-4xl font-bold">SC</span>
-                  </div>
-                  <p className="text-sm opacity-80">Professional Photo</p>
-                </div>
-              </div>
-              
-              {/* Floating elements */}
-              <div className="absolute -top-6 -right-6 w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur-sm">
-                <Linkedin className="h-8 w-8 text-white" />
-              </div>
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                <FileText className="h-6 w-6 text-white" />
-              </div>
-            </div>
+          <div className="animate-slide-in-right flex flex-col items-center justify-center">
+            <img
+              src="/lovable-uploads/professional-photo.png"
+              alt="Professional Photo"
+              className="w-72 rounded-2xl object-cover mb-4 border-4 border-white shadow-lg transition-transform duration-300 hover:scale-105"
+              style={{ height: '384px' }}
+            />
+            {/* Floating elements */}
+            {/* <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
+              <FileText className="h-6 w-6 text-white" />
+            </div> */}
           </div>
         </div>
       </div>

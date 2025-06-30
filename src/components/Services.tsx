@@ -1,5 +1,3 @@
-
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { 
   FileCheck, 
@@ -9,6 +7,7 @@ import {
   TrendingUp, 
   Users 
 } from 'lucide-react';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 const Services = () => {
   const services = [
@@ -16,37 +15,43 @@ const Services = () => {
       icon: FileCheck,
       title: "Audit & Assurance",
       description: "Comprehensive statutory audits, internal audits, and assurance services ensuring compliance with regulatory requirements and best practices.",
-      features: ["Statutory Audits", "Internal Audits", "Compliance Reviews", "Risk Assessment"]
+      features: ["Statutory Audits", "Internal Audits", "Compliance Reviews", "Risk Assessment"],
+      externalLink: "https://www.icai.org/post.html?post_id=12345"
     },
     {
       icon: Calculator,
       title: "Tax Compliance & Planning",
       description: "Strategic tax planning and comprehensive compliance services to optimize tax efficiency while ensuring full regulatory adherence.",
-      features: ["Income Tax Planning", "Tax Return Filing", "Tax Optimization", "Appeal Assistance"]
+      features: ["Income Tax Planning", "Tax Return Filing", "Tax Optimization", "Appeal Assistance"],
+      externalLink: "https://www.incometax.gov.in/iec/foportal/"
     },
     {
       icon: BookOpen,
       title: "Bookkeeping & Financial Reporting",
       description: "Accurate bookkeeping services and detailed financial reporting to provide clear insights into your business performance.",
-      features: ["Monthly Bookkeeping", "Financial Statements", "Management Reports", "Cash Flow Analysis"]
+      features: ["Monthly Bookkeeping", "Financial Statements", "Management Reports", "Cash Flow Analysis"],
+      externalLink: "https://www.mca.gov.in/MinistryV2/companiesact2013.html"
     },
     {
       icon: Shield,
       title: "GST Consultation",
       description: "Expert GST advisory services including registration, compliance, return filing, and optimization strategies for businesses.",
-      features: ["GST Registration", "Return Filing", "Compliance Audit", "Refund Processing"]
+      features: ["GST Registration", "Return Filing", "Compliance Audit", "Refund Processing"],
+      externalLink: "https://www.gst.gov.in/"
     },
     {
       icon: TrendingUp,
       title: "Business Advisory",
       description: "Strategic business advisory services to help startups and established businesses make informed financial decisions.",
-      features: ["Business Planning", "Financial Analysis", "Growth Strategy", "Investment Advisory"]
+      features: ["Business Planning", "Financial Analysis", "Growth Strategy", "Investment Advisory"],
+      externalLink: "https://www.startupindia.gov.in/"
     },
     {
       icon: Users,
       title: "Specialized Services",
       description: "Tailored financial services for specific client segments including startups, SMEs, and NRI clients.",
-      features: ["Startup Advisory", "SME Solutions", "NRI Services", "Due Diligence"]
+      features: ["Startup Advisory", "SME Solutions", "NRI Services", "Due Diligence"],
+      externalLink: "https://www.msme.gov.in/"
     }
   ];
 
@@ -55,7 +60,7 @@ const Services = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Professional Services
+            Diverse Professional Services
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Comprehensive financial and accounting solutions tailored to meet your business needs 
@@ -94,8 +99,11 @@ const Services = () => {
                 <Button 
                   variant="outline" 
                   className="w-full group-hover:bg-blue-600 group-hover:text-white group-hover:border-blue-600 transition-all"
+                  asChild
                 >
-                  Learn More
+                  <a href={service.externalLink} target="_blank" rel="noopener noreferrer">
+                    Learn More
+                  </a>
                 </Button>
               </CardContent>
             </Card>
@@ -116,7 +124,11 @@ const Services = () => {
               <Button size="lg" className="bg-blue-600 hover:bg-blue-700">
                 Schedule a Consultation
               </Button>
-              <Button variant="outline" size="lg">
+              <Button 
+                variant="outline" 
+                size="lg"
+                onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              >
                 View Portfolio
               </Button>
             </div>
